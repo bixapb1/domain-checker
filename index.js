@@ -6,9 +6,6 @@ const CHECK_URL = "https://tech-p2b.click/admin/";
 const TELEGRAM_BOT_TOKEN = "7967934650:AAGYDUsli2txm6cal0AQdb6ewv4f4qIC39s";
 const TELEGRAM_CHAT_ID = "-4812827339";
 
-// Периодичность проверки (15 минут)
-const CHECK_INTERVAL = 15 * 60 * 1000;
-
 function sendTelegramMessage(message) {
   const encodedMessage = encodeURIComponent(message);
   const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage?chat_id=${TELEGRAM_CHAT_ID}&text=${encodedMessage}`;
@@ -56,8 +53,5 @@ function checkDomain() {
   req.end();
 }
 
-// Первая проверка
+// ✅ Только одна проверка (Cron сам перезапустит каждый час)
 checkDomain();
-
-// Повторяем каждые 15 минут
-setInterval(checkDomain, CHECK_INTERVAL);
