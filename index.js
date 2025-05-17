@@ -2,7 +2,7 @@ const https = require("https");
 const { URL } = require("url");
 
 // === НАСТРОЙКИ ===
-const CHECK_URL = "https://tech-p2b.click/admin/";
+const CHECK_URL = "";
 const TELEGRAM_BOT_TOKEN = "7967934650:AAGYDUsli2txm6cal0AQdb6ewv4f4qIC39s";
 const TELEGRAM_CHAT_ID = "-4812827339";
 
